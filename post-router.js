@@ -1,9 +1,10 @@
 const express = require('express');
-
+const helmet = require('helmet');
 const Posts = require('./data/db.js');
 
 const router = express.Router();
 
+router.use(helmet());
 router.use(express.json());
 
 router.post('/', (req, res) => {
