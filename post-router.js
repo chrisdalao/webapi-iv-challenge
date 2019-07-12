@@ -49,7 +49,7 @@ router.post('/:id/comments', (req, res) => {
 router.get('/', (req, res) => {
     Posts.find()
         .then(posts => {
-            res.status(200).json(posts)
+            res.status(200).json({ envMessage: process.env.envMessage, posts })
         })
         .catch(err => {
             err = { error: "The posts information could not be retrieved" };
